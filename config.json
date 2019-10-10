@@ -1,0 +1,14 @@
+{
+    "token":"ton token",
+    "prefix": "prefix que tu veux",
+    "password": "mot de passe",
+    
+    "text1": "stream 1",
+    "text2": "stream 2",
+    "text3": "stream 3",
+    "text4": "stream 4",
+    "name1": "nickname 1",
+    "name2": "nickname 2",
+    "name3": "nickname 3",
+    "name4": "nickname 4"
+}
