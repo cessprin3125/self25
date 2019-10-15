@@ -1117,7 +1117,9 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
       console.log("Le membre a été kick !");
     }
   }
-  ////////////////
+
+
+/////////////
 
   //**COMMANDES SPAM/RAID */
   //CREER MASSE CHANNELS TEXTUELS
@@ -2162,7 +2164,9 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
     premium.addField("⚜ **ban [@user / ID]** : ", "Bannir un utilisateur.");
     premium.addField("⚜ **kick [@user / ID]** : ", "Expulser un utilisateur.");
     premium.addField("⚜ **creater [couleur] [nom]** : ", " Créer un rôle.");
-    premium.setFooter(self);
+    premium.addField("⚜ **emote** [nom] [image en attachement]** : ","Ajouter un emoji.")
+    premium.addField("⚜ **get [nom d'un emoji]** : ", " Récupérer un emoji ( le lien qui vous permettra de le télécharger ensuite).")
+premium.setFooter(self);
     premium.setColor("BLACK");
     message.channel.send(premium).then(function(message) {
       message.delete(120100);
