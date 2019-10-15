@@ -338,16 +338,22 @@ Self.on("message", async message => {
       .catch(console.error);
   }
 
+  
   //CHANGER SON AVATAR
-  if (cmd === prefix + "pp") {
-    let attachment = message.attachments.first();
-    let avatar = attachment.url;
-    Self.user.setAvatar(avatar);
-    message.channel.send("Avatar mis à jour ! ✅").then(function(message) {
-      message.delete(5000);
-    });
-    console.log(chalk.magenta("Avatar mis à jour ! "));
-  }
+if(cmd === (prefix + 'pp')){ 
+message.delete() 
+let attachment = message.attachments.first()
+ if(attachment){
+ let avatar = attachment.url 
+Self.user.setAvatar(avatar).catch(() => message.channel.send("Une erreur est survenue.")
+.then(function(){ message.delete(5000)})) 
+message.channel.send("Avatar mis à jour ! ✅") .then(function (message) { message.delete(5000); }); 
+} else { 
+let avatar = args.join(" ") 
+Self.user.setAvatar(avatar).catch(() => message.channel.send("Une erreur est survenue.")
+.then(function(){ message.delete(5000)})) message.channel.send("Avatar mis à jour ! ✅") .then(function (message){ message.delete(5000); }); } 
+console.log(chalk.magenta('Avatar mis à jour ! '))
+ }
 
   //COMMANDE PING
   if (message.content.startsWith(prefix + "ping")) {
