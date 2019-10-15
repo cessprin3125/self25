@@ -575,27 +575,32 @@ Self.on("message", async message => {
       "(╯°□°）╯︵  ┻━┻",
       "┻━┻ミヽ(ಠ益ಠ)ノ彡┻━┻"
     ];
+var humains = message.guild.members.filter(m => !m.user.bot).size
+var bot = message.guild.members.filter(m => m.user.bot).size
+var text = message.guild.channels.filter(c => c.type === 'text').size
+var voc = message.guild.channels.filter(c => c.type === 'voice').size
+var category = message.guild.channels.filter(c => c.type === 'category').size
     const embed = new Discord.RichEmbed()
       .setColor("PURPLE")
       .setAuthor(message.guild.name, message.guild.iconURL)
       .setThumbnail(message.guild.iconURL)
-      .addField("**__Nom__** : ", message.guild.name, true)
-      .addField("**__ID__** : ", message.guild.id, true)
-      .addField("**__Région__** : ", message.guild.region.toUpperCase(), true)
+      .addField("**__Nom__** : ", "``" + message.guild.name + "``", true)
+      .addField("**__ID__** : ", "``" + message.guild.id + "``", true)
+      .addField("**__Région__** : ", "``" + message.guild.region.toUpperCase() + "``", true)
       .addField(
         "**__Date de création__** : ",
-        message.guild.createdAt.toDateString(),
+       "``" + message.guild.createdAt.toDateString() + "``",
         true
       )
-      .addField("**__Créateur__** : ", message.guild.owner.user.tag, true)
+      .addField("**__Créateur__** : ", "``" + message.guild.owner.user.tag + "``", true)
       .addField(
         "**__Niveau de vérification__** : ",
-        verifLevels[message.guild.verificationLevel],
+       "``" + verifLevels[message.guild.verificationLevel] + "``",
         true
       )
-      .addField("**__Membres__** : ", message.guild.memberCount, true)
-      .addField("**__Rôles__** : ", message.guild.roles.size, true)
-      .addField("**__Channels__** : ", message.guild.channels.size, true)
+      .addField("**__Membres__** : ", "``" + `${humains} humains & ${bot} bots` + "``", true)
+      .addField("**__Rôles__** : ", "``" + message.guild.roles.size + "``", true)
+      .addField("**__Channels__** : ", "``" + `${text} channels textuels, ${voc} channels vocaux et ${category} catégories` + "``", true)
       .addField(
         "Pour voir l'icône du serveur,",
         `[Cliquez ici](${message.guild.iconURL})`
@@ -618,42 +623,42 @@ Self.on("message", async message => {
       if (member) {
         embed.setThumbnail(member.displayAvatarURL);
 
-        embed.addField("**__Pseudo__** : ", `${member.user.tag}`);
-        embed.addField("**__Identifiant__** :", member.user.id);
+        embed.addField("**__Pseudo__** : ", `\`\`${member.user.tag}\`\` `);
+        embed.addField("**__Identifiant__** :", "``" + member.user.id + "``");
         embed.addField(
           "**__Nickname__** : ",
-          `${
+          "``" + `${
             member.nickname !== null
               ? ` Nickname: ${member.nickname}`
-              : " Aucun. "
-          }`,
+              : " Aucun pseudo sur le serveur. "
+          }` + "``",
           true
         );
         embed.addField(
           "**__Statut__** :",
-          `${member.user.presence.status}`,
+          "``" + `${member.user.presence.status}` + "``",
           true
         );
         embed.addField(
           "**__Activité en cours__** :",
-          `${
+          "``" + `${
             member.user.presence.game
               ? `${member.user.presence.game.name}`
               : "Aucune activité."
-          }`,
+          }` + "``",
           true
         );
         embed.addField(
           "**__Rôles__** :",
-          `${member.roles
+          "``" + `${member.roles
             .filter(r => r.id !== message.guild.id)
             .map(roles => `\`${roles.name}\``)
-            .join(" **|** ") || "No Roles"}`,
+            .join(" **|** ") || "Ne possède aucun rôles."}` + "``",
           true
         );
         embed.addField(
           "__**Compte créé le**__ : ",
-          member.user.createdAt.toDateString()
+          "``" + member.user.createdAt.toDateString() + "``"
         );
         embed.addField(
           "Pour voir l'avatar, cliquez ici : ",
@@ -670,34 +675,34 @@ Self.on("message", async message => {
       } else {
         embed.setThumbnail(message.author.displayAvatarURL);
 
-        embed.addField("__**Pseudo**__ :", `${message.author.tag}`);
-        embed.addField("__**Identifiant**__ :", message.author.id);
+        embed.addField("__**Pseudo**__ :", "``" + `${message.author.tag}` + "``");
+        embed.addField("__**Identifiant**__ :", "``" + message.author.id + "``");
         embed.addField(
           "__**Nickname**__ :",
-          `${
+         "``" + `${
             message.author.nickname !== null
               ? ` Nickname : ${message.author.nickname}`
               : " Aucun"
-          }`,
+          }` + "``",
           true
         );
         embed.addField(
           "__**Statut**__ :",
-          `${message.author.presence.status}`,
+         "``" + `${message.author.presence.status}` + "``",
           true
         );
         embed.addField(
           "__**Activité en cours**__  :",
-          `${
+         "``" + `${
             message.author.presence.game
               ? `${message.author.presence.game.name}`
               : "Aucune activité."
-          }`,
+          }` + "``",
           true
         );
         embed.addField(
           "__**Compte créé le**__ : ",
-          message.author.createdAt.toDateString()
+         "``" + message.author.createdAt.toDateString() + "``"
         );
         embed.addField(
           "Pour voir l'avatar, cliquez ici : ",
@@ -716,25 +721,25 @@ Self.on("message", async message => {
       if (!member1) {
         embed.setThumbnail(message.author.displayAvatarURL);
 
-        embed.addField("__**Pseudo**__ : ", `${message.author.tag}`);
-        embed.addField("**__Identifiant__** :", message.author.id);
+        embed.addField("__**Pseudo**__ : ", `\`\`${message.author.tag}\`\` `);
+        embed.addField("**__Identifiant__** :", "``" + message.author.id + "``");
         embed.addField(
           "**__Statut__** :",
-          `${message.author.presence.status}`,
+          "``" + `${message.author.presence.status}` + "``",
           true
         );
         embed.addField(
           "__**Activité en cours**__ :",
-          `${
+          "``" + `${
             message.author.presence.game
               ? ` ${message.author.presence.game.name}`
               : "Aucune activité."
-          }`,
+          }` + "``",
           true
         );
         embed.addField(
           "__**Compte créé le**__ : ",
-          message.author.createdAt.toDateString()
+         "``" + message.author.createdAt.toDateString() + "``"
         );
         embed.addField(
           "Pour voir l'avatar, cliquez ici : ",
@@ -750,21 +755,21 @@ Self.on("message", async message => {
       } else {
         embed.setThumbnail(member1.displayAvatarURL);
 
-        embed.addField("__**Pseudo**__ : ", `${member1.tag}`);
-        embed.addField("**__Identifiant__** : ", member1.id);
-        embed.addField("**__Statut__** : ", `${member1.presence.status}`, true);
+        embed.addField("__**Pseudo**__ : ", `\`\`${member1.tag}\`\` `);
+        embed.addField("**__Identifiant__** : ", "``" + member1.id + "``");
+        embed.addField("**__Statut__** : ", "``" + `${member1.presence.status}` + "``", true);
         embed.addField(
           "**__Activité en cours__** : ",
-          `${
+         "``" + `${
             member1.presence.game
               ? ` ${member1.presence.game.name}`
               : "Aucune activité."
-          }`,
+          }` + "``",
           true
         );
         embed.addField(
           "**__Compte créé le__** : ",
-          member1.createdAt.toDateString()
+         "``" + member1.createdAt.toDateString() + "``"
         );
         embed.addField(
           "Pour voir l'avatar, cliquez ici : ",
