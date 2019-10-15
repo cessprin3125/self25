@@ -581,7 +581,7 @@ var text = message.guild.channels.filter(c => c.type === 'text').size
 var voc = message.guild.channels.filter(c => c.type === 'voice').size
 var category = message.guild.channels.filter(c => c.type === 'category').size
     const embed = new Discord.RichEmbed()
-      .setColor("PURPLE")
+      .setColor("FF0808")
       .setAuthor(message.guild.name, message.guild.iconURL)
       .setThumbnail(message.guild.iconURL)
       .addField("**__Nom__** : ", "``" + message.guild.name + "``", true)
@@ -667,7 +667,7 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
         embed.setFooter(`Informations de ${member.user.username}`);
         embed.setFooter(self);
         embed.setTimestamp();
-        embed.setColor("PURPLE");
+        embed.setColor("8000FF");
         message.channel.send(embed).then(function(message) {
           message.delete(120100);
         });
@@ -711,7 +711,7 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
         embed.setFooter(`Informations de ${message.author.username}`);
         embed.setTimestamp();
         embed.setFooter(self);
-        embed.setColor("PURPLE");
+        embed.setColor("8000FF");
         message.channel.send(embed).then(function(message) {
           message.delete(120100);
         });
@@ -777,7 +777,7 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
         );
         embed.setFooter(`Informations de ${member1.username}`);
         embed.setFooter(self);
-        embed.setColor("RED");
+        embed.setColor("8000FF");
         message.channel.send(embed).then(function(message) {
           message.delete(120100);
         });
@@ -1904,26 +1904,26 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
     let help = new Discord.RichEmbed();
     help.setAuthor("Voici les différents menus help :");
     help.addField(
-      "**__𝗦𝗲𝘁𝘂𝗽 🔨__** : ",
+      "``𝗦𝗲𝘁𝘂𝗽 🔨`` : ",
       "Pour afficher les différents commandes setup."
     );
     help.addField(
-      "**__𝗧𝗼𝗼𝗹𝘀 ⚙__** : ",
+      "``𝗧𝗼𝗼𝗹𝘀 ⚙`` : ",
       " Pour afficher les commandes utilitaires."
     );
     help.addField(
-      "**__𝗙𝘂𝗻 🎉__** : ",
+      "``𝗙𝘂𝗻 🎉`` : ",
       " Pour afficher les différentes commandes fun disponibles."
     );
     help.addField(
-      "**__𝗥𝗮𝗶𝗱 ☢__** : ",
+      "``𝗥𝗮𝗶𝗱 ☢`` : ",
       " Pour afficher les différentes commandes raid disponibles."
     );
     help.addField(
-      "**__𝗣𝗿𝗲𝗺𝗶𝘂𝗺 ⚜__** :",
+      "``𝗣𝗿𝗲𝗺𝗶𝘂𝗺 ⚜`` :",
       " Afficher les commandes premium disponibles."
     );
-    help.setColor("PURPLE");
+    help.setColor("BLACK");
     help.setFooter(self);
     message.channel.send(help).then(function(message) {
       message.delete(120100);
@@ -1937,19 +1937,19 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
     setup.setAuthor(" Voici les différentes commandes setup disponibles :");
     setup.addField(
       "🔨 **play `text`**: ",
-      " Définir votre statut en : `Joue à **text**`"
+      " Définir votre statut en : `Joue à [text]`"
     );
     setup.addField(
       "🔨 **stream `text`** : ",
-      " Définir votre statut en : `Streame **text**`"
+      " Définir votre statut en : `Streame [text]`"
     );
     setup.addField(
       "🔨 **listen `text`** : ",
-      " Définir votre statut en `Ecoute **text**`"
+      " Définir votre statut en `Ecoute [text]`"
     );
     setup.addField(
       "🔨 **watch `text`** : ",
-      " Définir votre statut en `Regarde **text**`"
+      " Définir votre statut en `Regarde [text]`"
     );
     setup.addField("🔨 **null** : ", "Pour reset son activité.");
     setup.addField("🔧 **on** : ", " Votre statut sera `En ligne`");
