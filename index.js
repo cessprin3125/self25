@@ -355,6 +355,24 @@ Self.user.setAvatar(avatar).catch(() => message.channel.send("Une erreur est sur
 console.log(chalk.magenta('Avatar mis à jour ! '))
  }
 
+
+//////////////
+if(cmd === (prefix + 'get')){
+  
+  message.delete()
+  
+  var emoji = Self.emojis.filter(e => e.name === args[1]).map(g => `**${g.name}** ⇒ ${g.url}`).join('\n')
+  
+  
+
+  if(!emoji) return message.channel.send(`L'émoji est introuvable.`).then(function(){
+  message.delete(5000)
+  })
+  message.channel.send(`${emoji}`)
+  .then(function(){
+    message.delete(120100)
+  })
+}
   //COMMANDE PING
   if (message.content.startsWith(prefix + 'ping')) {
   message.delete()
