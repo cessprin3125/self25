@@ -356,16 +356,16 @@ console.log(chalk.magenta('Avatar mis à jour ! '))
  }
 
   //COMMANDE PING
-  if (message.content.startsWith(prefix + "ping")) {
-    message.delete();
-    var embedping = new Discord.RichEmbed()
-      .setColor(0x2ed32e)
-      .addField("Pong", `My Ping : ${Math.round(Self.ping)} ms`)
-      .setFooter(self);
-    message.channel.send(embedping).then(function(message) {
+  if (message.content.startsWith(prefix + 'ping')) {
+  message.delete()
+    
+    
+    message.channel.send(`Le ping du self est actuellement de ** ${Math.round(Self.ping)}** ms.`)
+      .then(function (message) { 
       message.delete(60050);
-    });
-    console.log(chalk.green("Le ping du self a été envoyé."));
+  });
+  console.log(chalk.green('Le ping du self a été envoyé.'))
+  
   }
 
   //RECUPERER L'AVATAR D'UN UTILISATEUR
