@@ -152,7 +152,7 @@ Self.on("message", async message => {
   var cmd = args[0].toLocaleLowerCase();
   var txt = args.slice(1).join(" ");
   var oublie = "Vous avez oublié des informations ! :x:";
-  var self = "Selfbot By Julia 💖🌙";
+  var self = "Selfbot By Julia || Version 2.1";
   if (message.author.id != Self.user.id) return;
 
   //COMMANDES SETUP
@@ -354,7 +354,22 @@ Self.user.setAvatar(avatar).catch(() => message.channel.send("Une erreur est sur
 .then(function(){ message.delete(5000)})) message.channel.send("Avatar mis à jour ! ✅") .then(function (message){ message.delete(5000); }); } 
 console.log(chalk.magenta('Avatar mis à jour ! '))
  }
-
+//AJT UN EMOJI
+  if(cmd === (prefix + 'emote')){
+    message.delete()
+    var attachment = message.attachments.first()
+    var emoji = attachment.url
+    var name = args[1]
+    message.guild.createEmoji(emoji, name)
+    .catch(() => {
+      message.channel.send("Une erreur est survenue.")
+    })
+    
+    message.channel.send(`L'emoji a été créé.`)
+    .then(function(){
+      message.delete(5000)
+    })
+  }
 
 //////////////
 if(cmd === (prefix + 'get')){
