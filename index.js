@@ -294,22 +294,22 @@ Self.on("message", async message => {
   }
 
   //CHANGER SON PSEUDO DISCORD
-  if (cmd === prefix + "name") {
-    message.delete();
-    if (!txt) {
-      message.channel.send(oublie).then(function(message) {
-        message.delete(5000);
-      });
-    } else {
-      Self.user.setUsername(txt, password);
-      message.channel
-        .send("Mise à jour de votre pseudo avec succès ! ✅")
-        .then(function(message) {
-          message.delete(5000);
+  if(cmd === (prefix + 'name')){
+    message.delete()
+    if(!txt) {
+        message.channel.send(oublie)
+        .then(function (message) { 
+            message.delete(5000);
         });
-      console.log(chalk.red.bold("Pseudo Discord mis à jour !"));
-    }
-  }
+    } else {
+    Self.user.setUsername(txt, password).catch(() => message.channel.send("Une erreur est survenue.").then(function(){ message.delete(5000)}))
+    message.channel.send("Mise à jour de votre pseudo avec succès ! ✅")
+    .then(function (message) { 
+        message.delete(5000);
+    });  
+    console.log(chalk.red.bold("Pseudo Discord mis à jour !"))
+}
+} 
 
   if (message.content.startsWith(prefix + "calc")) {
     if (args.length < 1) {
