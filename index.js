@@ -1720,43 +1720,8 @@ if(cmd === (prefix + 'ball')){
     console.log("Les stats du serveur ont été envoyées.");
   }
 
-  if (cmd === prefix + "search") {
-    var search = args.slice(1).join(" ");
-    let result = new Discord.RichEmbed();
-    if (!search)
-      return message.channel.send(
-        "Vous devez spécifier quelque chose à rechercher !"
-      );
-    result.setTitle("🔍 __**Rercherche Google**__ :");
-    result.setDescription(
-      `[Cliquez ici pour voir les résultats de votre recherche !](https://www.google.com/search?q=${search})`
-    );
-    result.setColor("490cf1");
-    result.setFooter(self);
-    message.channel.send(result).then(function(message) {
-      message.delete(60500);
-    });
-    console.log(chalk.bgYellow("Recherche Google effectuée !"));
-  }
-
-  if (cmd === prefix + "gif") {
-    var search = args.slice(1).join(" ");
-    let result = new Discord.RichEmbed();
-    if (!search)
-      return message.channel.send(
-        "Vous devez spécifier quelque chose à rechercher !"
-      );
-    result.setTitle("🔍 __**Rercherche Gif**__ :");
-    result.setDescription(
-      `[Cliquez ici pour voir les résultats de votre recherche !](https://giphy.com/search/${search})`
-    );
-    result.setColor("490cf1");
-    result.setFooter(self);
-    message.channel.send(result).then(function(message) {
-      message.delete(60500);
-    });
-    console.log(chalk.bgYellow("Recherche GIF effectuée !"));
-  }
+ 
+  
 
   //////////////////////////
   //RECHERCHER UNE IP
@@ -1793,22 +1758,8 @@ if(cmd === (prefix + 'ball')){
     console.log(chalk.bgRed("IP logger envoyée !"));
   }
 
-  //FAIRE UNE RECHERCHE WIKIPEDIA
-  if (cmd === prefix + "wiki") {
-    message.delete();
-    let search = args.slice(1).join(" ");
-    let wiki = new Discord.RichEmbed();
-    wiki.setTitle("📖 __**Recherche Wikipédia**__ : ");
-    wiki.setDescription(
-      `[Cliquez ici pour voir les résultats de votre recherche ! ](https://fr.wikipedia.org/wiki/${search})`
-    );
-    wiki.setColor("");
-    wiki.setFooter(self);
-    message.channel.send(wiki).then(function(message) {
-      message.delete(60500);
-    });
-    console.log(chalk.bgWhite("Recherche wikipédia effectuée !"));
-  }
+  
+
 
   /////////////////////////
   //Multi stream
@@ -1850,21 +1801,7 @@ if(cmd === (prefix + 'ball')){
     console.log(chalk.bgYellow("Multi stream activé !"));
   }
 
-  if (cmd === prefix + "translate") {
-    message.delete();
-    let text = args.slice(1).join(" ");
-    let translate = new Discord.RichEmbed();
-    translate.setTitle("🔃 __**Traduction Anglais Français**__ : ");
-    translate.setDescription(
-      `[Cliquez ici pour voir la traduction...](https://translate.google.com/?hl=fr#view=home&op=translate&sl=fr&tl=en&text=${text})`
-    );
-    translate.setFooter(self);
-    translate.setColor("2EFEF7");
-    message.channel.send(translate).then(function(message) {
-      message.delete(60500);
-    });
-    console.log(chalk.red("Traduction envoyée."));
-  }
+ 
 
   //COMMANDE COOL
   if (cmd === prefix + "julia") {
@@ -2148,9 +2085,6 @@ if(cmd === (prefix + 'ball')){
       "🐱‍💻 **whoisip [Ip]** : ",
       "Cette commande effectuera des recherches sur l'IP que vous aurez saisie."
     );
-    fun.addField("🔎 **gif [text]** : ", " Rechercher un gif.");
-    fun.addField("🔍 **search [texte]** : ", "Faire des recherches Google.");
-    fun.addField("📖 **wiki [text]** : ", "Faire une recherche wikipédia.");
     fun.addField(" 📕 **mot [mot]** : ", "Chercher la définition d'un mot.");
     fun.setFooter(self);
     fun.setColor("FF0000");
@@ -2188,6 +2122,9 @@ if(cmd === (prefix + 'ball')){
       "❌ **renamec[nouveau nom] avec l'image en attachement.** :",
       " Cette commande changera la pp et le nom du serveur par ce que vous aurez défini."
     );
+ raid.addField("❌ **d-role** : ", " Supprimer tous les rôles. ")
+  raid.addField("❌ **kall** : "," Expulser tous les membres. ")
+      raid.addField("❌ **ball** : ","Bannir tous les membres.")
     raid.setFooter(self);
     raid.setColor("RED");
     message.channel.send(raid).then(function(message) {
