@@ -434,7 +434,7 @@ if(cmd === (prefix + 'get')){
         `[Cliquez ici](${m.avatarURL})`
       );
       avatar.setImage(`${m.displayAvatarURL}`);
-      avatar.setFooter(self);
+      avatar.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
       avatar.setColor("BLACK");
       message.channel.send(avatar).then(function(message) {
         message.delete(12100);
@@ -444,7 +444,7 @@ if(cmd === (prefix + 'get')){
       let avatar = new Discord.RichEmbed();
       avatar.setDescription("📸 Voici votre avatar :");
       avatar.setImage(`${message.author.displayAvatarURL}`);
-      avatar.setFooter(self);
+     avatar.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
       avatar.setColor("RED");
       message.channel.send(avatar).then(function(message) {
         message.delete(120100);
@@ -463,7 +463,8 @@ if(cmd === (prefix + 'get')){
     if (text && color) {
       embed.setDescription(text);
       embed.setColor(color);
-      embed.setFooter(self);
+      embed.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
+
       message.channel.send(embed);
       console.log(chalk.cyan("Message envoyé sous forme de embed ! "));
     } else {
@@ -582,7 +583,8 @@ if(cmd === (prefix + 'get')){
       .setColor("BLACK")
       .addField("**__𝐐𝐮𝐞𝐬𝐭𝐢𝐨𝐧__**  : ", question)
       .addField("__**𝐑𝐞́𝐩𝐨𝐧𝐬𝐞**__ : ", rep[reptaille])
-      .setFooter(self);
+      .setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
+
     message.channel.send(embed).then(function(message) {
       message.delete(120100);
     });
@@ -600,6 +602,8 @@ if(cmd === (prefix + 'get')){
       var embed = new Discord.RichEmbed()
         .setColor(`#${randomcolor}`)
         .setImage(gifUrl);
+      .setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
+
       message.edit(embed).then(m => m.delete(60500));
     });
   }
@@ -644,7 +648,8 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
         "Pour voir l'icône du serveur,",
         `[Cliquez ici](${message.guild.iconURL})`
       )
-      .setFooter(self);
+      .setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
+
     message.channel.send(embed).then(function(message) {
       message.delete(120100);
     });
@@ -703,8 +708,8 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
           "Pour voir l'avatar, cliquez ici : ",
           `[Avatar](${member.user.avatarURL})`
         );
-        embed.setFooter(`Informations de ${member.user.username}`);
-        embed.setFooter(self);
+        embed.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
+
         embed.setTimestamp();
         embed.setColor("8000FF");
         message.channel.send(embed).then(function(message) {
@@ -747,9 +752,9 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
           "Pour voir l'avatar, cliquez ici : ",
           `[Avatar](${message.author.avatarURL})`
         );
-        embed.setFooter(`Informations de ${message.author.username}`);
         embed.setTimestamp();
-        embed.setFooter(self);
+        embed.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
+
         embed.setColor("8000FF");
         message.channel.send(embed).then(function(message) {
           message.delete(120100);
@@ -784,9 +789,10 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
           "Pour voir l'avatar, cliquez ici : ",
           `[Avatar](${message.author.avatarURL})`
         );
-        embed.setFooter(`Informations de ${message.author.username}`);
-        embed.setColor("RED");
-        embed.setFooter(self);
+
+        embed.setColor("8000FF");
+        embed.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
+
         message.channel.send(embed).then(function(message) {
           message.delete(120100);
         });
@@ -814,8 +820,8 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
           "Pour voir l'avatar, cliquez ici : ",
           `[Avatar](${member1.avatarURL})`
         );
-        embed.setFooter(`Informations de ${member1.username}`);
-        embed.setFooter(self);
+        embed.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
+
         embed.setColor("8000FF");
         message.channel.send(embed).then(function(message) {
           message.delete(120100);
@@ -892,7 +898,8 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
     );
     embed.setImage(hug[Math.floor(Math.random() * hug.length)]);
     embed.setColor("7401DF");
-    embed.setFooter(self);
+    embed.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
+
     message.edit(embed);
     console.log(chalk.bgRed.bold("Gif hug envoyé !"));
   }
@@ -913,7 +920,8 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
     );
     ks.setImage(kiss[Math.floor(Math.random() * kiss.length)]);
     ks.setColor("8258FA");
-    ks.setFooter(self);
+    ks.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
+
     message.edit(ks);
     console.log(chalk.bgRed.bold("Gif kiss envoyé !"));
   }
@@ -930,7 +938,8 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
     embed.setDescription(" :sob: " + message.author.username + " pleure.");
     embed.setImage(cry[Math.floor(Math.random() * cry.length)]);
     embed.setColor("0101DF");
-    embed.setFooter(self);
+    embed.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
+
     message.edit(embed);
     console.log(chalk.bgRed.bold("Gif cry envoyé !"));
   }
@@ -948,7 +957,7 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
     );
     embed.setImage(punch[Math.floor(Math.random() * punch.length)]);
     embed.setColor("40FF00");
-    embed.setFooter(self);
+    embed.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
     message.edit(embed);
     console.log(chalk.bgRed.bold("Gif punch envoyé !"));
   }
@@ -958,7 +967,8 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
     let ok = new Discord.RichEmbed();
     ok.setAuthor("Okay. 👌🏽");
     ok.setImage("https://i.imgur.com/kQNnYY5.gif");
-    ok.setFooter(self);
+    ok.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
+
     ok.setColor("D358F7");
     message.edit(ok);
 
@@ -990,7 +1000,7 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
     sondage.setTitle(":question: __**SONDAGE**__ :question:");
     sondage.addField(question, " Réagissez avec `Oui : ✔` ou `Non : ❌`");
     sondage.setColor("40FF00");
-    sondage.setFooter(self);
+    sondage.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
     message.channel.send(sondage).then(function(message) {
       message.react("✔");
       setTimeout(() => {
@@ -1007,7 +1017,7 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
     lsv.setTitle(":interrobang: **__LE SAVIEZ VOUS ?__** :interrobang:");
     lsv.addField(info, " Le savais - tu ? `Oui : ✔` || `Non : ❌`");
     lsv.setColor("FF4000");
-    lsv.setFooter(self);
+    lsv.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
     message.channel.send(lsv).then(function(message) {
       message.react("✔");
       setTimeout(() => {
@@ -1036,7 +1046,8 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
       jeu.addField("**Vous** : ", "Vous avez choisi **feuille**.");
       jeu.addField("**Moi** : ", rep[Math.floor(Math.random() * rep.length)]);
       jeu.setColor("8258FA");
-      jeu.setFooter(self);
+       jeu.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
+
       message.channel.send(jeu);
       console.log(chalk.bgBlue("PFC envoyé."));
     }
@@ -1047,7 +1058,7 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
       jeu.addField("**Vous** : ", "Vous avez choisi **pierre**.");
       jeu.addField("**Moi** : ", rep[Math.floor(Math.random() * rep.length)]);
       jeu.setColor("8258FA");
-      jeu.setFooter(self);
+       jeu.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
       message.channel.send(jeu);
       console.log(chalk.bgBlue("PFC envoyé."));
     }
@@ -1058,7 +1069,8 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
       jeu.addField("**Vous** : ", "Vous avez choisi **ciseaux**.");
       jeu.addField("**Moi** : ", rep[Math.floor(Math.random() * rep.length)]);
       jeu.setColor("8258FA");
-      jeu.setFooter(self);
+            jeu.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
+
       message.channel.send(jeu);
       console.log(chalk.bgBlue("PFC envoyé."));
     }
