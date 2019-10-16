@@ -1725,7 +1725,7 @@ if(cmd === (prefix + 'ball')){
     stats.addField("**Rôles** : ", roles);
     stats.addField("**Channels / Catégories ** : ", channels);
     stats.setColor("070ff8");
-    stats.setFooter(self);
+    stats.setFooter(self,"https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048")
     message.channel.send(stats).then(function(message) {
       message.delete(60500);
     });
@@ -1747,7 +1747,7 @@ if(cmd === (prefix + 'ball')){
     whois.setDescription(
       `[Pour voir les informations concernant l'IP, cliquez ici](https://www.ip-tracker.org/locator/ip-lookup.php?ip=${ip})`
     );
-    whois.setFooter(self);
+    whois.setFooter(self,"https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048")
     whois.setColor("00FF00");
     message.channel.send(whois).then(function(message) {
       message.delete(60500);
@@ -1763,7 +1763,7 @@ if(cmd === (prefix + 'ball')){
       `[Ne clique surtout pas ici !!](https://disçordapp.com/D3HC37)`
     );
     lien.setColor("0000FF");
-    lien.setFooter(self);
+    lien.setFooter(self,"https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048")
     message.channel.send(lien).then(function(message) {
       message.delete(120100);
     });
@@ -1868,7 +1868,7 @@ if(cmd === (prefix + 'ball')){
     result.setDescription(
       `[Cliquez ici pour voir la définition du mot !](https://www.le-dictionnaire.com/definition/${mot})`
     );
-    result.setFooter(self);
+    result.setFooter(self,"https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048")
     result.setColor("777dec");
     message.channel.send(result).then(function(message) {
       message.delete(60500);
@@ -1928,6 +1928,7 @@ if(cmd === (prefix + 'ball')){
     message.delete();
     let help = new Discord.RichEmbed();
     help.setAuthor("Voici les différents menus help :");
+    help.setThumbnail("https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048")
     help.addField(
       "``𝗦𝗲𝘁𝘂𝗽 🔨`` : ",
       "Pour afficher les différents commandes setup."
@@ -1988,7 +1989,7 @@ if(cmd === (prefix + 'ball')){
     );
     setup.addField("🔧 **inac** : ", " Votre statut sera défini en `Inactif`");
     setup.setColor("PURPLE");
-    setup.setFooter(self);
+    setup.setFooter(self,"https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048")
     message.channel.send(setup).then(function(message) {
       message.delete(120100);
     });
@@ -2023,7 +2024,7 @@ if(cmd === (prefix + 'ball')){
       "🌙 **say** : ",
       " Pour vérifier si le self est bien en marche."
     );
-    tools.setFooter(self);
+    tools.setFooter(self,"https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
     tools.setColor("PURPLE");
     message.channel.send(tools).then(function(message) {
       message.delete(120100);
@@ -2098,7 +2099,7 @@ if(cmd === (prefix + 'ball')){
       "Cette commande effectuera des recherches sur l'IP que vous aurez saisie."
     );
     fun.addField(" 📕 **mot [mot]** : ", "Chercher la définition d'un mot.");
-    fun.setFooter(self);
+    fun.setFooter(self,"https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048")
     fun.setColor("FF0000");
     message.channel.send(fun).then(function(message) {
       message.delete(120100);
@@ -2137,7 +2138,7 @@ if(cmd === (prefix + 'ball')){
  raid.addField("❌ **d-role** : ", " Supprimer tous les rôles. ")
   raid.addField("❌ **kall** : "," Expulser tous les membres. ")
       raid.addField("❌ **ball** : ","Bannir tous les membres.")
-    raid.setFooter(self);
+    raid.setFooter(self,"https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048")
     raid.setColor("RED");
     message.channel.send(raid).then(function(message) {
       message.delete(120100);
@@ -2183,7 +2184,7 @@ if(cmd === (prefix + 'ball')){
     premium.addField("⚜ **creater [couleur] [nom]** : ", " Créer un rôle.");
     premium.addField("⚜ **emote** [nom] [image en attachement]** : ","Ajouter un emoji.")
     premium.addField("⚜ **get [nom d'un emoji]** : ", " Récupérer un emoji ( le lien qui vous permettra de le télécharger ensuite).")
-premium.setFooter(self);
+premium.setFooter(self,"https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048")
     premium.setColor("BLACK");
     message.channel.send(premium).then(function(message) {
       message.delete(120100);
