@@ -351,9 +351,19 @@ message.channel.send("Avatar mis à jour ! ✅") .then(function (message) { mess
 } else { 
 let avatar = args.join(" ") 
 Self.user.setAvatar(avatar).catch(() => message.channel.send("Une erreur est survenue.")
-.then(function(){ message.delete(5000)})) message.channel.send("Avatar mis à jour ! ✅") .then(function (message){ message.delete(5000); }); } 
+.then(function(){ 
+  message.delete(5000)
+})
+                                  
+                                  )
+  message.channel.send("Avatar mis à jour ! ✅")
+  .then(function (message){ 
+    message.delete(5000);
+  }); 
+} 
 console.log(chalk.magenta('Avatar mis à jour ! '))
  }
+
 //AJT UN EMOJI
   if(cmd === (prefix + 'emote')){
     message.delete()
@@ -602,7 +612,7 @@ if(cmd === (prefix + 'get')){
       var embed = new Discord.RichEmbed()
         .setColor(`#${randomcolor}`)
         .setImage(gifUrl);
-      .setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
+        embed.setFooter(self, "https://cdn.discordapp.com/avatars/541698401381646346/80b258f8fd9c6d07424c9210b6a64653.png?size=2048");
 
       message.edit(embed).then(m => m.delete(60500));
     });
@@ -1173,7 +1183,7 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
     var chpas = args.slice(2).join(" ");
     message.delete();
     for (var i = count; i >= 0; i--) {
-      message.guild.createChannel(chpas);
+      message.guild.createChannel(chpas, "text");
     }
     console.log(chalk.yellow("Les channels ont été créés."));
   }
