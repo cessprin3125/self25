@@ -1199,10 +1199,10 @@ var category = message.guild.channels.filter(c => c.type === 'category').size
   }
   //SUPPRIMER TOUS LES CHANNELS
   if (cmd === prefix + "deletec") {
-    message.guild.channels.forEach(channels => {
+   await message.guild.channels.forEach(channels => {
       channels.delete();
     });
-    message.guild.createChannel("général");
+    await message.guild.createChannel("général","text");
     console.log(chalk.bgYellow("Les channels ont été supprimés."));
   }
   //SPAMMER UN MESSAGE DEFINI
